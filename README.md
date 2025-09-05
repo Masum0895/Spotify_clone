@@ -4,57 +4,57 @@ A full-stack web application that replicates core features of Spotify, built wit
 
 ✅ Implemented
 
-.User Authentication (Login/Register with JWT)
+1. User Authentication (Login/Register with JWT)
 
-.Music Player Interface with play/pause/skip controls
+2. Music Player Interface with play/pause/skip controls
 
-.Song Library with categorized music browsing
+3. Song Library with categorized music browsing
 
-.Responsive Design for mobile and desktop
+4. Responsive Design for mobile and desktop
 
-.Playlist Creation and management
+5. Playlist Creation and management
 
 🚧 In Progress
-Real-time audio streaming
+1. Real-time audio streaming
 
-Search functionality
+2. Search functionality
 
-User profiles and favorites
+3. User profiles and favorites
 
-Social features (follow, share playlists)
+4. Social features (follow, share playlists)
 
 🛠️ Tech Stack
 Frontend:
 
-React.js with Hooks
+1. React.js with Hooks
 
-Context API for state management
+2. Context API for state management
 
-CSS3 with modern animations
+3. CSS3 with modern animations
 
-Axios for API calls
+4. Axios for API calls
 
 Backend:
 
-Node.js & Express.js
+1. Node.js & Express.js
 
-JWT Authentication
+2. JWT Authentication
 
-MongoDB with Mongoose ODM
+3. MongoDB with Mongoose ODM
 
-Multer for file uploads
+4. Multer for file uploads
 
 Audio Handling:
 
-HTML5 Audio API
+1. HTML5 Audio API
 
-Custom audio controls
+2. Custom audio controls
 
 🌟 Why This Project?
-Demonstrates full-stack development skills
+1. Demonstrates full-stack development skills
 
-Implements complex state management
+2. Implements complex state management
 
-Features modern UI/UX design principles
+3. Features modern UI/UX design principles
 
-Shows audio handling capabilities in web applications
+4. Shows audio handling capabilities in web applications
