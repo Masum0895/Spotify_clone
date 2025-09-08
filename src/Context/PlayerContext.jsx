@@ -21,7 +21,7 @@ const PlayerContextProvider = (props) => {
         }
     })
 
-    {/* To update the song status, */}
+    // To update the song status, 
     const play = ()=>{
         audioRef.current.play();
         setPlayStatus(true);
@@ -31,15 +31,43 @@ const PlayerContextProvider = (props) => {
         audioRef.current.pause();
         setPlayStatus(false);
     }
+    // To play any song , click to play, any song play with its id/ array index 
+    const playWithId = async (id) => {
+        await setTrack(songsData[id]);
+        await audioRef.current.play();
+        setPlayStatus(true);
+    }
 
-    {/* To update the time of song according its flow, */}
+    const previous = async () => {
+        if (track.id>0) {
+            await setTrack(songsData[track.id-1]);
+            await audioRef.current.play();
+            setPlayStatus(true);
+        }
+    }
+
+    const next = async () => {
+        if (track.id < songsData.length-1) {
+            await setTrack(songsData[track.id+1]);
+            await audioRef.current.play();
+            setPlayStatus(true);
+        }
+    }
+
+    // To change the song time, song state according to the click position
+    const seekSong = async(e) =>{
+        audioRef.current.currentTime = ((e.nativeEvent.offsetX / seekBg.current.offsetWidth) * audioRef.current.duration);
+    }
+
+
+    // To update the time of song according its flow, 
 
     useEffect(()=>{
         setTimeout(()=>{
             audioRef.current.ontimeupdate = () => {
                 {/* To update the bar, according to song & time */}
                 seekBar.current.style.width = (Math.floor(audioRef.current.currentTime / audioRef.current.duration * 100))+"%";
-                
+
                 setTime({
                     currentTime: {
             second: Math.floor(audioRef.current.currentTime%60),
@@ -55,7 +83,7 @@ const PlayerContextProvider = (props) => {
     },[audioRef])
 
     const contextValue = {
-        audioRef, seekBg, seekBar, track, setTrack, playStatus, setPlayStatus, time, setTime, play, pause
+        audioRef, seekBg, seekBar, track, setTrack, playStatus, setPlayStatus, time, setTime, play, pause, playWithId, previous, next, seekSong
     }
 
     return (
